@@ -1,0 +1,29 @@
+{% extends 'mainApp/base.html' %}
+
+{% block title %}Новый сотрудник{% endblock title %}
+
+{% block content %}
+    <form method="POST" action="create/">
+        {% csrf_token %}
+            <h3>Добавить сотрудника</h3>
+            <div class="form-group">
+                <label>Введите ФИО</label>
+                <input type="text" class="form-control" name="name" required/>
+            </div>
+            <div class="form-group">
+                <label>Введите должность</label>
+                <input type="text" class="form-control" name="position" required/>
+            </div>
+            <div class="form-group">
+                <label>Дата приема на работу</label>
+                <input type="date" class="form-control" name="date_employment" min="1920-01-01" max="2018-12-31" required/>
+            </div>
+            <div class="form-group">
+                <label>Размер заработной платы</label>
+                <input type="number" class="form-control" name="wage" min="1" max="2000000" required/>
+            </div>
+
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Сохранить" >
+    </form>
+
+{% endblock content %}

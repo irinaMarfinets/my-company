@@ -1,0 +1,90 @@
+h3 {
+	text-align: center;
+}
+.header {
+	background-image: url(../img/header.png);
+	background-repeat: no-repeat;
+	height: 200px;
+	text-align: right;
+}
+
+.header h1 {
+	margin-top: 10%;
+}
+.menu {
+	height: 50px;
+	background: #0a53bb;
+}
+
+.nav-link {
+	color: white;
+}
+
+.nav-link:hover {
+	color: #007bff;
+}
+
+.entry_user {
+	width: 400px;
+	height: 250px;
+	text-align: center;
+	padding-top: 13%;
+}
+
+.entry_user_p {
+	margin-top: 4%;
+}
+
+.p_welcom{
+	padding-top: 10px;
+}
+
+
+
+.main {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.header_login {
+	text-align: center;
+}
+.form_login, .form_reg {
+	width: 1000px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.form_login label, .form_reg label {
+	width: 10%;
+	height: 30px;
+	text-align: left;
+}
+
+.form_login input, .form_reg input {
+	width: 50%;
+	height: 30px;
+}
+
+.errorlist li {
+    list-style-type: none;
+    width: 100%;
+    text-align: right;
+}
+
+ul .errorlist {
+	margin: 0;
+	padding: 0;
+    margin-left: 0; 
+    padding-left: 0;
+    width: 100%;
+}
+
+.footer {
+	background: #0a53bb;
+	height: 50px;
+	text-align: right;
+	color: white;
+	padding-top: 20px;
+}

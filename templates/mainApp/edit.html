@@ -1,0 +1,28 @@
+{% extends 'mainApp/base.html' %}
+
+{% block title %}Новый сотрудник{% endblock title %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <h3>Изменить данные сотрудника</h3>
+        <div class="form-group">
+            <label>Введите имя</label><br>
+            <input type="text" class="form-control" name="name" value="{{person.name}}" required/>
+        </div>
+        <div class="form-group">
+            <label>Введите должность</label><br>
+            <input type="text" class="form-control" name="position" value="{{person.position}}" required/>
+        </div>
+        <div class="form-group">
+            <label>Введите дату приема на работу</label><br>
+            <input type="date" class="form-control" name="date_employment" value="{{person.date_employment}}" min="1920-01-01" max="2018-12-31" required/>
+        </div>
+        <div class="form-group">
+            <label>Размер заработной платы</label><br>
+            <input type="number" class="form-control" name="wage" value="{{person.wage}}" min="1" max="2000000" required/>
+        </div>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Сохранить изменения" >
+    </form>
+
+{% endblock content %}

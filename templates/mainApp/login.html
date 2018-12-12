@@ -1,0 +1,18 @@
+{% extends 'mainApp/base.html' %}
+
+{% block title %}Авторизация{% endblock title %}
+
+{% block content %}
+	<div class="row header_login">
+		<div class="col">
+			<h3>Авторизация</h3>
+		</div>
+	</div>
+	<form method="POST" action="">
+	        {% csrf_token %}
+	    <div class="form_login">
+		    {{ form.as_p }}
+		    <input style="width: 61%; height: 40px" type="submit" value="Вход" class="btn btn-primary">
+	    </div>
+	</form>
+{% endblock content %}

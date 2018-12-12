@@ -1,0 +1,62 @@
+{% extends 'mainApp/base.html' %}
+
+{% block title %}Главная{% endblock title %}
+
+{% block content %}
+
+{% if not request.user.is_authenticated %}
+
+<!--<div class="col welcome">
+    <h3>Здравствуйте, Гость!</h3>
+</div>-->
+<div class="row justify-content-center">
+    <div class="col entry_user">
+        <input class="btn btn-primary btn-lg btn-block" type="button" value="Войти" onClick='location.href="login/"'>
+        <p class="entry_user_p">или</p>
+        <input class="btn btn-primary btn-lg btn-block" type="button" value="Зарегистрироваться" onClick='location.href="registration/"'>
+    </div>
+</div>
+
+{%else%}
+<div class="row">
+    <div class="col-auto mr-auto">
+        <p class="p_welcom">Здравствуйте, {{ request.user }} !</p>
+    </div>
+    <div class="col-auto">
+        <a href="logout/" class="btn btn-outline-primary">Выйти</a>
+    </div>
+</div>
+    
+    {% if people.count > 0 %}
+    <h3>Список сотрудников</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Id</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Должность</th>
+                <th scope="col">Дата приема на работу</th>
+                <th scope="col">Размер заработной платы</th>
+                <th scope="col">Действие</th>
+            </tr>
+        </thead>
+        {% for employee in people %}
+        <tbody>
+            <tr>
+            	<td>{{ employee.id }}</td>
+            	<td>{{ employee.name }}</td>
+            	<td>{{ employee.position }}</td>
+            	<td>{{ employee.date_employment }}</td>
+            	<td>{{ employee.wage }}</td>
+                <td><a href="edit/{{employee.id}}">Изменить</a> | <a href="delete/{{employee.id}}">Удалить</a></td>
+            </tr>
+        </tbody>
+
+        {% endfor %}
+    </table>
+    {% endif %}
+    <input class="btn btn-primary btn-lg btn-block" type="button" value="Добавить сотрудника" onClick='location.href="add/"'>
+
+{% endif %}
+
+{% endblock content %}
